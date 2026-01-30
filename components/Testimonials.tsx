@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const StatCard: React.FC<{ label: string, value: string, icon: React.ReactNode, detail: string, color: string }> = ({ label, value, icon, detail, color }) => (
+const StatCard: React.FC<{ label: string, value: string, icon: React.ReactElement, detail: string, color: string }> = ({ label, value, icon, detail, color }) => (
   <div className="relative group p-6 md:p-10 bg-slate-900/40 border border-white/5 rounded-[2rem] md:rounded-[3rem] transition-all duration-700 hover:bg-slate-900/60 hover:border-yellow-500/20 overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col items-center md:items-start text-center md:text-right">
     
     {/* Background Tech Pattern */}
@@ -12,7 +12,7 @@ const StatCard: React.FC<{ label: string, value: string, icon: React.ReactNode, 
     <div className="relative z-10 w-full">
       {/* Icon Area - More Compact */}
       <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 md:mb-6 border border-white/10 shadow-inner transition-all duration-700 group-hover:scale-110 ${color} bg-white/5 mx-auto md:mx-0`}>
-        {React.cloneElement(icon as React.ReactElement, { className: "w-6 h-6 md:w-8 md:h-8" })}
+        {React.cloneElement(icon, { className: "w-6 h-6 md:w-8 md:h-8" } as any)}
       </div>
       
       {/* Number Area - Professional Sizing */}

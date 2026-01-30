@@ -1,4 +1,3 @@
-
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -10,7 +9,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig(({ mode }) => {
   // تحميل متغيرات البيئة بناءً على الوضع الحالي (development/production)
   // السلسلة الفارغة '' تعني تحميل جميع المتغيرات الموجودة في النظام
-  const env = loadEnv(mode, process.cwd(), '');
+  // Fix: Cast process to any to resolve TypeScript error 'Property cwd does not exist on type Process'
+  const env = loadEnv(mode, (process as any).cwd(), '');
 
   return {
     plugins: [react()],
