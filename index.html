@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>العريقي للخدمات الصناعية والهندسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#151e32',
+                950: '#020617',
+              }
+            },
+            animation: {
+              'text-reveal': 'reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-up': 'fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'scan': 'scan 6s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+              reveal: {
+                '0%': { transform: 'translateY(100%)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              fadeUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              scan: {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '50%': { opacity: '0.6' },
+                '100%': { transform: 'translateY(100vh)', opacity: '0' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { opacity: '0.3', filter: 'blur(20px)' },
+                '50%': { opacity: '0.6', filter: 'blur(40px)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap&font-display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-yellow: #eab308;
+        --deep-navy: #020617;
+        --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      body {
+        font-family: 'Tajawal', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.5s ease;
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #eab308; border-radius: 10px; }
+      
+      .dark ::-webkit-scrollbar-track { background: #020617; }
+
+      .bg-mesh {
+        position: fixed;
+        inset: 0;
+        background-image: 
+          radial-gradient(circle at 2px 2px, rgba(234, 179, 8, 0.03) 1px, transparent 0);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .shimmer-bg {
+        background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
+        background-size: 1000px 100%;
+      }
+      .dark .shimmer-bg {
+        background: linear-gradient(90deg, #0f172a 25%, #1e293b 50%, #0f172a 75%);
+        background-size: 1000px 100%;
+      }
+
+      * { backface-visibility: hidden; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.93.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "url": "https://esm.sh/url@^0.11.4"
+  }
+}
+</script>
+</head>
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-500">
+    <div class="bg-mesh"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
